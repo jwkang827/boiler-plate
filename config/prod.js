@@ -1,3 +1,3 @@
 module.exports = {
-    mongoURI: ''//헤로쿠 몽고db 연결
+    mongoURI: process.env.MONGO_URI //헤로쿠 몽고db 연결
 }

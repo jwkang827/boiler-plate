@@ -1,13 +1,15 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const port = 5000
 const { User } = require('./models/User')
+
+const config = require('./config/key')
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 const mongoose = require('mongoose')
-mongoose.connect('mongodb+srv://jwkang827:Dil8MyZ5nAEBMN2m@boilerplate.tpyn8.mongodb.net/')
+mongoose.connect(config.mongoURI)
     .then(() => console.log('MongDB Connected!')).catch(err => console.log(err))
 
 app.get('/', (req, res) => res.send('Hello World!'))
