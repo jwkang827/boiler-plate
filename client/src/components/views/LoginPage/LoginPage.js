@@ -15,13 +15,13 @@ function LoginPage() {
       password: Password
     }
     dispatch(loginUser(body))
-    .then(response => {
-      if(response.payload.loginSuccess) {
-        navigate('/')
-      } else {
-        alert('Error')
-      }
-    })
+      .then(response => {
+        if (response.payload.loginSuccess) {
+          navigate('/')
+        } else {
+          alert('Error')
+        }
+      })
   }
 
   return (
@@ -31,7 +31,6 @@ function LoginPage() {
         <input type="email" value={Email} onChange={(event) => { setEmail(event.currentTarget.value) }} />
         <label>Password</label>
         <input type="password" value={Password} onChange={(event) => { setPassword(event.currentTarget.value) }} />
-
         <br />
         <button type="submit">
           Login
